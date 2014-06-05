@@ -88,21 +88,21 @@ reStructedText属于轻量级的 **标记语言** ，标记语言创建了丰富
 
    A. test
 
-   #. test2
+   B. test2
 
         a. test3
 
-        #. test4
+        b. test4
 
 1. 在括号里的大小写罗马字母
 
    (I) test1
-   
-   (#) test2
+
+   (II) test2
 
         i) test3
 
-        #) test4
+        ii) test4
 
 ## 列表续行、段落和代码块
 
@@ -152,26 +152,26 @@ reStructedText
 1. 文字链接
 
    i) 访问 `百度 <http://www.baidu.com>`
-   
-   ii) 直接引用已定义过的 百度_ 链接 
 
-   iii) 链接地址在后面定义，如 `GitHub`_ 。
+   ii) 直接引用已定义过的 百度\_ 链接 
+
+   iii) 链接地址在后面定义，如 `GitHub`\_ 。
 
 1. 内部跳转
 
-   \.. anchor: 定义了一个锚，点击 anchor_ 跳转到文章第一段。
-   
-   或点击 `这里 <#anchor>`_ 跳转到文章第一段
+   \.. anchor: 定义了一个锚，点击 anchor\_ 跳转到文章第一段。
+
+   或点击 `这里 <#anchor>`\_ 跳转到文章第一段
 
 1. 脚注
 
-   i) 脚注可以手动用#自动分配数字 [#]_ , 例如 [#]_
+   i) 脚注可以手动用#自动分配数字 \[#]\_ , 例如 \[#]\_
 
-   #) 自动分配脚注也可以作为标签多次引用 [#label]_
+   ii) 自动分配脚注也可以作为标签多次引用 \[#label]\_
 
-   #) 可以用星号做脚注 [*]_ , 这样 [*]_ ，以及这样 [*]_
+   iii) `可以用星号做脚注 [*]_ , 这样 [*]_ ，以及这样 [*]_`
 
-   #) 单词也可以做脚注 [EI-1834]_
+   iv ) 单词也可以做脚注 \[EI-1834]\_
 
 # 图片
 
@@ -181,10 +181,9 @@ reStructedText
     :width: 150
     :align: center
 
-#. 图片链接 |girllink|_
+1. 图片链接 |girllink|\_
 
-表格
-----------
+## 表格
 
 1. 示例：
 
@@ -201,8 +200,7 @@ reStructedText
         +--------+---------+--------+
 
 
-注释
---------
+## 注释
 
 “.. ”后的内容为注释, “.. ”必须在行首，如：
 
@@ -214,24 +212,17 @@ reStructedText
 
 
 
-.. _girllink: http://www.baidu.com
+.. \_girllink: http://www.baidu.com
 
 .. |girllink| image:: pic/girl.jpg
                 :width: 100
 
-.. _GitHub: http://github.com
+.. \_GitHub: http://github.com
 
-.. [#] 井号自动编号
+.. \[#] 井号自动编号
 
-.. [#] 井号自动编号1
+.. \[#] 井号自动编号1
 
-.. [#label] label编号
+.. \[#label] label编号
 
-.. [*] \*标注
-
-.. [*] \*标注1
-
-.. [*] \*标注2
-
-.. [EI-1834] \*超牛逼EI论文
-
+上帝，原谅我拿markdown写曾经的reStructedText说明。我已经了解了reStructedText文档，只是同步下而已，效果真烂。
