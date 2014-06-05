@@ -1,0 +1,285 @@
+<h1 id="restructedtext">reStructedText</h1>
+
+<p>reStructedText属于轻量级的 <strong>标记语言</strong> ，标记语言创建了丰富多彩的Web世界，但HTML与XML等语言并不易读，对机器友好而非对人友好。轻量级标记语言则不同，这些语言 <em>对人友好</em> ，同时 <em>语法简单</em> ，没有古怪的标签：</p>
+
+<pre><code>1. 可以使用最简单的文本编辑器；
+
+#. 所见即所得，WYSIWTG；
+
+#. 可版本控制；
+
+#. 可以实现单一源文件出版；
+</code></pre>
+
+<p>最为著名的几种轻量级标记语言有：</p>
+
+<pre><code>1. Markdown(Github常用)
+
+#. reStructedText(Python文档使用)
+
+#. Textile(Ruby使用)
+
+#. AsciiDoc
+
+#. Org-mode(Emacs)
+</code></pre>
+
+<p>这篇basic主要记录reStructedText的学习过程，其他应该大同小异。</p>
+
+<h2 id="section">题目和章节</h2>
+
+<p>::</p>
+
+<pre><code>=================
+一级题目
+=================
+
+以后依次是“-”，“～”，“^”，“+”，“`”
+</code></pre>
+
+<h2 id="section-1">标题</h2>
+
+<p>::</p>
+
+<pre><code>一级标题
+==================
+
+以下依次是“-”，“～”，“^”，“+”，“`”
+</code></pre>
+
+<h2 id="section-2">段落</h2>
+
+<ol>
+  <li>段落使用空行分隔，仅一个换行不分段，续上段。使用\在行尾可以使续行与原行尾不留白</li>
+</ol>
+
+<h1 id="section-3">. &#8220;| &#8220;可以用来保持换行符，下一行行不续行</h1>
+
+<pre><code>| this line，
+| new line.
+</code></pre>
+
+<h1 id="wysiwyg">. 段落缩进，WYSIWYG，直接缩进就好</h1>
+
+<h2 id="section-4">代码块</h2>
+
+<ol>
+  <li>
+    <p>双冒号缩进为代码块</p>
+
+    <p>::</p>
+
+    <pre><code> printf "Hello, reStructedText!\n"
+</code></pre>
+  </li>
+</ol>
+
+<h1 id="section-5">. 还可以声明语言类型</h1>
+
+<pre><code>.. code-block:: c 
+
+    printf("%s\n", "Hello, reStructedText!");
+</code></pre>
+
+<h2 id="section-6">无序列表</h2>
+
+<ol>
+  <li>星号，减号，加号可以开始无序列表</li>
+</ol>
+
+<h1 id="section-7">. 列表层级和缩进有关</h1>
+
+<h1 id="section-8">. 和具体符号无关</h1>
+
+<ul>
+  <li>
+    <p>level 1</p>
+  </li>
+  <li>
+    <p>level 1</p>
+
+    <ul>
+      <li>
+        <p>level 2</p>
+
+        <ul>
+          <li>level 3</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>level 1</p>
+  </li>
+</ul>
+
+<h2 id="section-9">有序列表</h2>
+
+<ol>
+  <li>数字和点开始编号</li>
+</ol>
+
+<h1 id="section-10">. 大小写字母和点</h1>
+
+<p>A. test</p>
+
+<p>#. test2</p>
+
+<pre><code>    a. test3
+
+    #. test4
+</code></pre>
+
+<h1 id="section-11">. 在括号里的大小写罗马字母</h1>
+
+<p>(I) test1</p>
+
+<p>(#) test2</p>
+
+<pre><code>    i) test3
+
+    #) test4
+</code></pre>
+
+<h2 id="section-12">列表续行、段落和代码块</h2>
+
+<ol>
+  <li>列表可以折行，折行后对齐自动续行</li>
+</ol>
+
+<h1 id="section-13">. 列表项目可以包含段落，空行开始新段落，新段落要与列表项对齐</h1>
+
+<p>example</p>
+
+<h1 id="section-14">. 列表项目可以包含代码段</h1>
+
+<p>.. code-block:: sh</p>
+
+<pre><code>$ printf "hello, reStructedText"
+</code></pre>
+
+<h2 id="section-15">定义</h2>
+
+<p>reStructedText
+    simple and beautiful.</p>
+
+<h2 id="section-16">分割线</h2>
+
+<p>四个减号或以上显示为分割线</p>
+
+<hr />
+
+<p>上面是分割线</p>
+
+<h2 id="section-17">字体</h2>
+
+<ol>
+  <li>这是 <strong>粗体</strong> , 这是 <em>斜体</em> , 这是\ <strong>去掉空格的粗体</strong>\ ,这是\ <em>去掉空格的斜体</em>\ 。</li>
+</ol>
+
+<h1 id="del--">. 这是 :del:<code>删除线</code> 效果 ???</h1>
+
+<h1 id="ul--">. 这是 :ul:<code>下划线</code> 效果 ???</h1>
+
+<h1 id="sub----sup-">. 这是 文字\ :sub:<code>下标</code> , 这是 文字\ :sup:<code>上标</code> 。</h1>
+
+<h1 id="kiss-me">. 这是 <code>等宽字体</code> ， <code>'123, kiss me~'</code></h1>
+
+<h1 id="section-18">. 引言</h1>
+
+<p><code>地球绕太阳转。</code> ——哥白尼</p>
+
+<h2 id="section-19">链接</h2>
+
+<ol>
+  <li>URL自动链接，例如：http://www.baidu.com</li>
+</ol>
+
+<h1 id="section-20">. 文字链接</h1>
+
+<p>i) 访问 <code>百度 &lt;http://www.baidu.com&gt;</code>_</p>
+
+<p>#) 直接引用已定义过的 百度_ 链接 </p>
+
+<p>#) 链接地址在后面定义，如 <code>GitHub</code>_ 。</p>
+
+<h1 id="section-21">. 内部跳转</h1>
+
+<p>.. anchor: 定义了一个锚，点击 anchor_ 跳转到文章第一段。</p>
+
+<p>或点击 <code>这里 &lt;#anchor&gt;</code>_ 跳转到文章第一段</p>
+
+<h1 id="section-22">. 脚注</h1>
+
+<p>i) 脚注可以手动用#自动分配数字 [#]_ , 例如 [#]_</p>
+
+<p>#) 自动分配脚注也可以作为标签多次引用 [#label]_</p>
+
+<p>#) 可以用星号做脚注 [<em>]_ , 这样 [</em>]_ ，以及这样 [*]_</p>
+
+<p>#) 单词也可以做脚注 [EI-1834]_</p>
+
+<h2 id="section-23">图片</h2>
+
+<ol>
+  <li>
+    <p>规定大小的、位置的图片</p>
+
+    <p>.. figure:: pic/girl.jpg
+ :width: 150
+ :align: center</p>
+  </li>
+</ol>
+
+<h1 id="girllink">. 图片链接 |girllink|_</h1>
+
+<h2 id="section-24">表格</h2>
+
+<ol>
+  <li>
+    <p>示例：</p>
+
+    <p>.. table:: 表格标题
+     :class: classic</p>
+
+    <pre><code> +--------+---------+--------+
+ | head1  |  head2  | head3  |
+ +========+=========+========+
+ |        |  cell   | cell   |
+ | row-   +---------+--------+
+ | span   |  * item1         |
+ |        |  * item2         |
+ +--------+---------+--------+
+</code></pre>
+  </li>
+</ol>
+
+<h2 id="section-25">注释</h2>
+
+<p>“.. ”后的内容为注释, “.. ”必须在行首，如：</p>
+
+<p>.. comment</p>
+
+<hr />
+
+<p>.. _girllink: http://www.baidu.com</p>
+
+<p>.. |girllink| image:: pic/girl.jpg
+                :width: 100</p>
+
+<p>.. _GitHub: http://github.com</p>
+
+<p>.. [#] 井号自动编号</p>
+
+<p>.. [#] 井号自动编号1</p>
+
+<p>.. [#label] label编号</p>
+
+<p>.. [*] *标注</p>
+
+<p>.. [*] *标注1</p>
+
+<p>.. [*] *标注2</p>
+
+<p>.. [EI-1834] *超牛逼EI论文</p>
+
